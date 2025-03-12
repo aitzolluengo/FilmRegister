@@ -45,10 +45,6 @@
         android:id="@+id/btn_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar Película"
-        android:padding="10dp"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"/>
+        android:text="Buscar Película"/>
 
 </LinearLayout>

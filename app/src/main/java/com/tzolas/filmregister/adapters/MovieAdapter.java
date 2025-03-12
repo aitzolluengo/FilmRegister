@@ -83,4 +83,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             status = itemView.findViewById(R.id.movie_status);
         }
     }
+    public void updateList(List<Movie> newMovies) {
+        this.movieList = newMovies;
+        notifyDataSetChanged();
+    }
+
 }

@@ -3,6 +3,7 @@ package com.tzolas.filmregister.activities;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +12,8 @@ import com.tzolas.filmregister.R;
 import com.tzolas.filmregister.adapters.MovieAdapter;
 import com.tzolas.filmregister.data.database.AppDatabase;
 import com.tzolas.filmregister.data.database.entities.Movie;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
@@ -24,13 +27,20 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar);
 
+        Log.d("SearchActivity", "SearchActivity se ha abierto correctamente.");
+
+
         searchInput = findViewById(R.id.search_input);
         recyclerView = findViewById(R.id.recycler_search);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Cargar todas las películas al inicio
         movieList = AppDatabase.getInstance(this).movieDao().getAllMovies();
+        if (movieList == null) {
+            movieList = new ArrayList<>(); // Evitar un error si la lista es null
+        }
         adapter = new MovieAdapter(movieList);
+
         recyclerView.setAdapter(adapter);
 
         // Filtrar la lista en tiempo real
@@ -50,7 +60,10 @@ public class SearchActivity extends AppCompatActivity {
 
     private void filterMovies(String query) {
         List<Movie> filteredList = AppDatabase.getInstance(this).movieDao().searchMovies("%" + query + "%");
-        adapter = new MovieAdapter(filteredList);
-        recyclerView.setAdapter(adapter);
+        if (filteredList == null) {
+            filteredList = new ArrayList<>();
+        }
+        adapter.updateList(filteredList);
     }
+
 }

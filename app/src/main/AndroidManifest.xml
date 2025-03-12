@@ -24,9 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.BaseActivity" />
         <activity android:name=".activities.SearchActivity" />
+        <activity android:name=".activities.MovieDetailActivity" />
+        <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.WatchListActivity" />
         <activity android:name=".activities.HistoryActivity" />
+
     </application>
 
 </manifest>

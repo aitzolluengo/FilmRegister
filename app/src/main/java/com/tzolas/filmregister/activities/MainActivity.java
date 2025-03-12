@@ -57,10 +57,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button btnSearch = findViewById(R.id.btn_search);
-        btnSearch.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-            startActivity(intent);
-        });
+        if (btnSearch == null) {
+            Log.e("MainActivity", "El botón btn_search no fue encontrado en el layout.");
+        } else {
+            btnSearch.setOnClickListener(v -> {
+                Log.d("MainActivity", "Botón de búsqueda presionado.");
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            });
+        }
+
+
 
 
         Button btnSendNotification = findViewById(R.id.btn_send_notification);
