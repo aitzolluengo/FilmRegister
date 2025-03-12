@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Título"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/detail_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Año"
+        android:textSize="16sp"
+        android:textColor="#666"/>
+
+    <TextView
+        android:id="@+id/detail_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textSize="16sp"
+        android:textColor="#008577"
+        android:layout_marginTop="8dp"/>
+
+    <RatingBar
+        android:id="@+id/detail_ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btn_toggle_watch_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marcar como vista"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

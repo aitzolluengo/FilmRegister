@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FilmRegister</string>
+    <string name="watchlist_button">Watchlista ikusi</string>
+    <string name="history_button">Historial ikusi</string>
+    <string name="search_button">Pelikula bilatu</string>
+    <string name="search_hint">Pelikula bilatu...</string>
+    <string name="movie_title_default">Izenburua</string>
+    <string name="movie_year_default">Urtea</string>
+    <string name="movie_status_default">Egoera</string>
+    <string name="select_language">Aukeratu hizkuntza</string>
+    <string name="send_notification">Mezua bidali</string>
+</resources>
