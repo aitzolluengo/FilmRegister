@@ -1,0 +1,14 @@
+# Ignorar carpetas de compilación
+/.gradle
+/.idea
+/build/
+*.iml
+
+# Ignorar archivos de configuración local
+/local.properties
+/*.keystore
+/*.jks
+
+# Caché de Android Studio
+/captures/
+/*.log
